@@ -1,0 +1,35 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="body" *ngIf="!loading">
+    <app-nav-bar></app-nav-bar>
+    <div class="content">
+        <div class="table-div table-responsive" >
+            <table class="table" *ngIf="payments.length">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Date</th>
+                        <th>Plan</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let payment of payments; let i = index">
+                        <td>{{i +1}}</td>
+                        <td>{{payment?.createdAt?.toString()?.slice(0,10)}}</td>
+                        <td class="name" routerLink="/view/{{payment.memberShip._id}}">
+                            {{payment.memberShip.expire}} days
+                        </td>
+                        <td>{{payment.rate}}</td>
+                        <td>
+                            <p *ngIf="status(payment.createdAt, payment.memberShip.expire)" class="status active">Active</p>
+                            <p *ngIf="!status(payment.createdAt, payment.memberShip.expire)" class="status expired">Expired</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 *ngIf="!payments?.length" class="empty-message">No Payment History Found</h3>
+        </div>
+        
+    </div>
+</div>

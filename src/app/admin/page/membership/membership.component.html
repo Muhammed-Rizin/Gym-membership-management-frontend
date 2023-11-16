@@ -1,0 +1,49 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="body" *ngIf="!loading">
+    <app-side-bar></app-side-bar>
+    <div class="content">
+        <button  [matMenuTriggerFor]="menu" class="new-button" *ngIf="!addFacility ">Create</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/admin/membership/add">Add Membership</button>
+            <button mat-menu-item (click)="addFacility = true">Add Facility</button>
+        </mat-menu>
+        <div class="div" *ngIf="addFacility">
+            <input type="text" placeholder="facility name" class="new-facility" [(ngModel)]="facility">
+            <button (click)="submit()" class="new-facility-button" *ngIf="!isSubmit">add</button>
+            <button class="new-facility-button" *ngIf="isSubmit">add</button>
+            <button (click)="addFacility = false" class="new-facility-close"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+        </div>
+        <div class="row" *ngIf="memberShips.length ">
+            <ng-container *ngFor="let membership of memberShips">
+                <div class="template" [ngClass]="{'blocked' : !membership.show}">
+                    <i class="fa fa-edit edit" routerLink="/admin/edit/{{membership._id}}"></i>
+                    <h2 class="rate">
+                        ${{ membership.rate }}/month
+                    </h2>
+                    <p class="operation-hours">
+                        Operating Hours: {{ membership.operationHours }} hours/day
+                    </p>
+                    <p class="expire-date">
+                        Membership Expires: {{ membership.expire }}
+                    </p>
+        
+                    <div class="facilities">
+                        <p class="facility-title">Facilities:</p>
+                        <ul>
+                            <ng-container *ngFor="let facility of membership.facilities">
+                                <li >
+                                    {{ facility.facility }}
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div *ngIf="!memberShips.length " class="empty-message">
+            <h3>No Memberships</h3>
+        </div>
+        
+        
+    </div>
+</div>

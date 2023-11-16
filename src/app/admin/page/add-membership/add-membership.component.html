@@ -1,0 +1,27 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="body"  *ngIf="!loading">
+    <app-side-bar></app-side-bar>
+    <div class="content">
+        <button routerLink="/admin/membership/" class="new-button">Back</button>
+        <form [formGroup]="form" (submit)="submit()">
+            <label for="amount">Rate</label>
+            <input type="number" placeholder="amount" formControlName="rate">
+            
+            <label for="expire">Plan duration</label>
+            <input type="number" placeholder="Plan duration" formControlName="expire">
+            
+            <label for="amount">Hours per day</label>
+            <input type="number" placeholder="Hours" formControlName="operationHours">
+
+            <button class="submit" type="submit" *ngIf="!is_submit">Submit</button>
+            <button class="submit" *ngIf="is_submit">Submit</button>
+        </form>
+        <h1>Facilities</h1>
+        <ng-container *ngFor="let facility of facilities">
+            <div class="facility-option">
+                <input class="checkbox-input" type="checkbox" id="{{facility.facility}}" [(ngModel)]="facility.checked" />
+                <label class="facility-label" for="{{facility.facility}}">{{facility.facility}}</label>
+            </div>
+        </ng-container>
+    </div>
+</div>

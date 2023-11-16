@@ -1,0 +1,46 @@
+.side-bar {
+    width: fit-content;
+    background-color: #333;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    width: fit-content;
+    padding: 0.5rem;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-link:hover {
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.active {
+    background-color: #555;
+}
+
+.fa {
+    margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .side-bar {
+        padding: 1rem;
+    }
+
+    .sidebar-link .link-text {
+        display: none;
+    }
+}

@@ -1,0 +1,148 @@
+.content {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+.body {
+    width: 100%;
+}
+.row {
+    display:  flex;
+    justify-content: center;
+}
+.membership-card {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 2rem;
+}
+
+.membership-card:hover {
+    transform: scale(1.02);
+}
+
+.card-header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.rate {
+    color: #3498db;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.operation-hours {
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.expire-date {
+    color: #555;
+    font-size: 1rem;
+}
+
+.facilities {
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.facility-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.facility-list-item {
+   color: #555;
+   font-weight: 400;
+}
+
+
+.facility-title {
+    margin: 0;
+}
+
+.section-1 {
+    width: 100%;
+    color: #fff;
+    background: #333;
+}
+
+.section-1-content {
+    margin: 0 auto;
+    padding: 10rem 0;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    margin: 0 25%;
+}
+
+.section-1 h1 {
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+}
+
+.section-1 p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.section-2 {
+    padding: 5rem;
+    background: #f8f9fa;
+}
+
+
+.membership-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.membership-header h2 {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.membership-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+
+.payment-button {
+    margin: 2rem 0;
+    padding: 0.5em 1rem;
+    float: right;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .section-1-content {
+        padding: 1rem 0;
+        margin: 1rem;
+    }
+}

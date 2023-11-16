@@ -1,0 +1,149 @@
+.body {
+    display: flex;
+    width: 100%;
+    height: inherit;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    width: auto;
+    height: auto;
+    padding: 3rem;
+}
+
+
+.new-button {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.new-facility, .new-facility-button {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    outline: none;
+}
+.new-facility-button {
+    margin-left: 1rem;
+}
+.new-facility-close {
+    font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 1rem;
+    margin-top: 2px;
+}
+.mat-menu {
+    background-color: #fff;
+    /* Menu background color */
+    border-radius: 4px;
+    /* Optional: Add some border-radius for rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a subtle box shadow */
+    display: flex;
+    flex-direction: column;
+}
+
+.template {
+    width: fit-content;
+    margin: 0.7rem 0.5rem 0;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s, transform 0.2s ease-in-out;
+    white-space: pre-line;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.template:hover {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.rate {
+    font-size: 1.3rem;
+    color: #3498db;
+    margin-bottom: 0px;
+}
+
+.operation-hours {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0px;
+}
+
+.facilities {
+    font-size: 1rem;
+    color: #333;
+
+    .facility-title {
+        font-weight: bold;
+        margin-bottom: 0px;
+
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+
+.new-button:hover {
+    background: #fff;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.edit {
+    float: right; 
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+.empty-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-message h3 {
+    color: #6B7280;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.blocked {
+    background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 1rem;
+    }
+}

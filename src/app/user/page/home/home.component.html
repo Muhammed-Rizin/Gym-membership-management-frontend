@@ -1,0 +1,59 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="body" *ngIf="!loading">
+    <app-nav-bar></app-nav-bar>
+    <div class="content">
+        <section class="section-1">
+            <div class="section-1-content">
+                <h1>Welcome to Armando</h1>
+                <p>Ready to conquer your fitness goals? Elevate your workout experience with Gym Mastery – your
+                    dedicated partner in achieving peak physical performance. Whether you're a seasoned athlete or just
+                    starting, our state-of-the-art facilities and expert trainers will guide you on a transformative
+                    fitness adventure. Unleash your potential, break limits, and redefine your fitness story. Embrace
+                    the strength within you – choose Gym Mastery.</p>
+            </div>
+        </section>
+
+        <section class="section-2">
+            <div class="membership-header">
+                <h2>Membership Options</h2>
+                <p>Choose the plan that best fits your fitness goals...</p>
+            </div>
+            <div class="row">
+                <ng-container *ngFor="let membership of memberShips">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="membership-card">
+                            <div class="card-header">
+                                Plan
+                            </div>
+                            <div class="card-body">
+                                <h2 class="rate">
+                                    ${{ membership.rate }}/month
+                                </h2>
+                                <p class="operation-hours">
+                                    Operating Hours: {{ membership.operationHours }} hours/day
+                                </p>
+                                <p class="expire-date">
+                                    Plan duration: {{ membership.expire}}
+                                </p>
+                                <div class="facilities">
+                                    <p class="facility-title">Facilities:</p>
+                                    <ul class="facility-list">
+                                        <ng-container *ngFor="let facility of membership.facilities">
+                                            <li class="facility-list-item">
+                                                {{ facility.facility }}
+                                            </li>
+                                        </ng-container>
+                                        
+                                    </ul>
+                                </div>
+                                <button *ngIf="!lastPayment" (click)="paymentSubmit(membership)" class="payment-button">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                
+            </div>
+        </section>
+    </div>
+
+</div>

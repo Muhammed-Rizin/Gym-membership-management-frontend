@@ -1,0 +1,14 @@
+<div class="side-bar">
+    <a routerLink="/admin/users" routerLinkActive="active" class="sidebar-link">
+        <i class="fa fa-users"></i> <span class="link-text">Users</span>
+    </a>
+    <a routerLink="/admin/membership" routerLinkActive="active" class="sidebar-link">
+        <i class="fa fa-id-card"></i> <span class="link-text">Membership</span>
+    </a>
+    <a routerLink="/admin/payments" routerLinkActive="active" class="sidebar-link">
+        <i class="fa fa-credit-card" aria-hidden="true"></i> <span class="link-text">Payments</span>
+    </a>
+    <a (click)="logOut()" routerLinkActive="active" class="sidebar-link">
+        <i class="fa fa-sign-out"></i><span class="link-text">Log out</span>
+    </a>
+</div>

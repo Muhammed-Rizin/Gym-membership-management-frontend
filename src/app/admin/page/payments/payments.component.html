@@ -1,0 +1,40 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="body" *ngIf="!loading">
+    <app-side-bar></app-side-bar>
+    <div class="content">
+        <div class="table-div table-responsive" *ngIf="payments.length || payments.length && !loading">
+            <table class="table" *ngIf="payments.length">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Plan</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let payment of payments; let i = index">
+                        <td>{{i +1}}</td>
+                        <td>{{payment.user.name}}</td>
+                        <td>{{payment.user.email}}</td>
+                            <td>${{ payment.rate }}</td>
+                            <td>
+                                <p *ngIf="status(payment)" class="status active">Active</p>
+                                <p *ngIf="!status(payment)" class="status expired">Expired</p>
+                            </td>
+                        
+                        <td>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="!payments.length" class="empty-message">
+                <h3>No users</h3>
+            </div>    
+        </div>
+        <div *ngIf="!payments.length && !payments.length && !loading" class="empty-message">
+            <h3>No users</h3>
+        </div>
+    </div>

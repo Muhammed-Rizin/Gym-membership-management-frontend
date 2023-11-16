@@ -1,0 +1,35 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="body" *ngIf="!loading">
+    <app-side-bar></app-side-bar>
+    <div class="content" >
+        <button routerLink="/admin/membership/" class="new-button">Back</button>
+        <div class="form" >
+            
+            <label for="amount">Rate</label>
+            <input type="number" name="amount" placeholder="amount" [(ngModel)]="membership.rate">
+            
+            <label for="expire">Plan duration</label>
+            <input type="number" name="expire" placeholder="Plan duration" [(ngModel)]="membership.expire">
+            
+            <label for="amount">Hours per day</label>
+            <input type="number" name="hours" placeholder="Hours" [(ngModel)]="membership.operationHours">
+            <div *ngIf="!membership.show" class="show-hide">
+                <p>Plan is currently not accecible for users </p>
+                <button (click)="membership.show = true"  class="show">Show</button>
+            </div>
+            <div *ngIf="membership.show" class="show-hide">
+                <p>Click here to hide membership from user</p>
+                <button (click)="membership.show = false"  class="hide">Hide</button>
+            </div>
+
+            <button (click)="submit()" class="submit">Save changes</button>
+        </div>
+        <h1>Facilities</h1>
+        <ng-container *ngFor="let facility of facilities">
+            <div class="facility-option">
+                <input class="checkbox-input" type="checkbox" id="{{facility.facility}}" [(ngModel)]="facility.checked" />
+                <label class="facility-label" for="{{facility.facility}}">{{facility.facility}}</label>
+            </div>
+        </ng-container>
+    </div>
+</div>
