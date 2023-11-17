@@ -1,27 +1,28 @@
-# GymMembershipManagement
+# Angular GYM Membership App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This Angular application complements the [GYM Membership backend](https://github.com/Muhammed-Rizin/Gym-membership-mangment-backend) to provide a user-friendly frontend for managing user memberships, user registration, and payment control.
 
-## Development server
+## Installation Steps
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Follow these steps to set up and run the Angular app:
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Ensure you have Node.js and npm installed on your machine.
+2. Clone this repository to your local machine using the following command:
+   ```bash
+   git clone https://github.com/Muhammed-Rizin/Gym-membership-mangment-frontend.git
+3. Navigate to the project directory:
+    ```bash
+   cd Gym-membership-mangment-frontend
+4. Install the required dependencies using npm:
+    ```bash
+    npm install
+5. Create an `environment.ts` file in the `src/environments` folder to store environment-specific variables. Here's an example:
+    ```bash
+    export const environment = {
+        production: false,
+        apiUrl: 'https://your-backend-api-url.com', 
+        razorpayKey: 'your-razorpay-key',
+    };
+6. Run the app:
+    ```bash
+    npm start
